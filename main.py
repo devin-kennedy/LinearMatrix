@@ -1,15 +1,18 @@
-from LinearMatrix.Matrix import Matrix
+from LinearMatrix import Matrix
 
 
 def main():
     myMatrix = Matrix()
-    eqs = [
-        "4x-3y-2z=5",
-        "-2x-y-z=-4",
-        "-7x-5y-7z=-31"
-    ]
-    myMatrix.from_system_strings(eqs, 3)
-    print(myMatrix.solve())
+    myMatrix.set_matrix([
+        [5, 1],
+        [2, 2],
+        [4, 1]
+    ])
+    myMatrix2 = Matrix([
+        [0, 0],
+        [0, 0]
+    ])
+    print(myMatrix * myMatrix2)
 
 
 if __name__ == "__main__":

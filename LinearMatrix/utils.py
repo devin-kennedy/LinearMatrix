@@ -1,5 +1,6 @@
 import math
-from decimal import Decimal
+
+import LinearMatrix.Matrix
 
 
 def has_numbers(string):
@@ -91,3 +92,30 @@ def normalize_floats_row(row):
                 e = int(e)
         row[i] = e
     return row
+
+
+def dot_product(tup1, tup2):
+    zipped = list(zip(tup1, tup2))
+    for i in range(len(zipped)):
+        zipped[i] = zipped[i][0] * zipped[i][1]
+    return sum(zipped)
+
+
+def all_equal(lst):
+    return len(set(lst)) <= 1
+
+
+def det_simple(matrix):
+    if type(matrix) != LinearMatrix.Matrix.Matrix:
+        raise ValueError("Must give a Matrix object")
+
+    if matrix.shape() != (2, 2):
+        raise ValueError("Function requires a 2x2 Matrix object")
+
+    return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0])
+
+
+def is_even(num):
+    if num % 2 == 0:
+        return True
+    return False

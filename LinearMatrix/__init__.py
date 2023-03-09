@@ -1,2 +1,2 @@
-from LinearMatrix import Matrix
+from .Matrix import Matrix
 from .utils import *
